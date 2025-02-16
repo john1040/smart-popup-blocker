@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Smart Popup Blocker Settings</title>
+  <link rel="stylesheet" href="options.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Smart Popup Blocker Settings</h1>
+    
+    <section class="whitelist">
+      <h2>Whitelist</h2>
+      <div class="whitelist-input">
+        <input type="text" id="domainInput" placeholder="Enter domain (e.g., example.com)">
+        <button id="addDomain">Add Domain</button>
+      </div>
+      <ul id="whitelistDomains"></ul>
+    </section>
+
+    <section class="detection">
+      <h2>Detection Settings</h2>
+      <div class="settings-group">
+        <label>Protection Level:</label>
+        <select id="aggressiveness">
+          <option value="1">Low - Block only obvious spam</option>
+          <option value="2">Medium - Balanced protection</option>
+          <option value="3">High - Aggressive blocking</option>
+        </select>
+      </div>
+
+      <div class="feature-toggles">
+        <label class="toggle">
+          <input type="checkbox" id="detectPlayButtons">
+          <span>Detect fake play buttons</span>
+        </label>
+        
+        <label class="toggle">
+          <input type="checkbox" id="detectMultiPopups">
+          <span>Block multiple popups in quick succession</span>
+        </label>
+        
+        <label class="toggle">
+          <input type="checkbox" id="detectNoInteraction">
+          <span>Block popups without user interaction</span>
+        </label>
+      </div>
+    </section>
+
+    <section class="preferences">
+      <h2>Default Preferences</h2>
+      <div class="settings-group">
+        <label class="toggle">
+          <input type="checkbox" id="enabledByDefault">
+          <span>Enable blocking by default for new sites</span>
+        </label>
+      </div>
+    </section>
+
+    <section class="statistics">
+      <h2>Blocking Statistics</h2>
+      <div class="stats-container">
+        <div class="stat-item">
+          <span>Total Popups Blocked:</span>
+          <span id="totalBlocked">0</span>
+        </div>
+        <div class="stat-item">
+          <span>Top Blocked Domains:</span>
+          <ul id="topBlockedDomains"></ul>
+        </div>
+        <div class="stat-item">
+          <span>Blocked Today:</span>
+          <span id="blockedToday">0</span>
+        </div>
+      </div>
+    </section>
+
+    <div class="actions">
+      <button id="resetSettings">Reset to Defaults</button>
+      <button id="exportSettings">Export Settings</button>
+      <button id="importSettings">Import Settings</button>
+    </div>
+  </div>
+  <script src="options.js"></script>
+</body>
+</html>
